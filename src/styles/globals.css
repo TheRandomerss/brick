@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&display=swap');
+
+/* Custom Color Palette */
+:root {
+  --cream: #faf8f5;
+  --sage: #8a9a7b;
+  --charcoal: #3a3a3a;
+  --soft-pink: #e8d5d1;
+  --warm-beige: #f0ebe5;
+  --muted-blue: #a8b8c8;
+  --gentle-lavender: #c8b8d8;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kalam', cursive;
+  line-height: 1.6;
+  color: var(--charcoal);
+  background-color: var(--cream);
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-body {
+  font-family: 'Kalam', cursive;
+}
+
+/* Custom Colors */
+.bg-cream { background-color: var(--cream); }
+.bg-sage { background-color: var(--sage); }
+.bg-charcoal { background-color: var(--charcoal); }
+.text-cream { color: var(--cream); }
+.text-sage { color: var(--sage); }
+.text-charcoal { color: var(--charcoal); }
+
+/* Paper Texture Background */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 154, 123, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(232, 213, 209, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(168, 184, 200, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sketch Logo */
+.sketch-logo {
+  position: relative;
+}
+
+.sketch-underline {
+  width: 60px;
+  height: 2px;
+  background: var(--sage);
+  margin-top: 2px;
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
+/* Navigation */
+.nav-button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Sketch Card */
+.sketch-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(138, 154, 123, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 20px rgba(138, 154, 123, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sketch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(138, 154, 123, 0.05) 49%, rgba(138, 154, 123, 0.05) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(232, 213, 209, 0.05) 49%, rgba(232, 213, 209, 0.05) 51%, transparent 52%);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.sketch-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 30px rgba(138, 154, 123, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Sketch Divider */
+.sketch-divider {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--sage), transparent);
+  border-radius: 2px;
+  position: relative;
+}
+
+.sketch-divider::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--sage);
+  border-radius: 50%;
+}
+
+/* Floating Doodles */
+.floating-doodles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.doodle {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite;
+}
+
+.doodle-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.doodle-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.doodle-3 {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* Value Cards */
+.value-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(138, 154, 123, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(138, 154, 123, 0.15);
+  border-color: rgba(138, 154, 123, 0.5);
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--sage), var(--muted-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* CTA Buttons */
+.cta-button {
+  background: linear-gradient(135deg, var(--sage), var(--muted-blue));
+  border: none;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(138, 154, 123, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 154, 123, 0.4);
+}
+
+.cta-button-outline {
+  background: transparent;
+  border: 2px solid var(--sage);
+  color: var(--sage);
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-button-outline:hover {
+  background: var(--sage);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Character Section */
+.character-section {
+  margin-bottom: 4rem;
+}
+
+.character-image-placeholder {
+  aspect-ratio: 1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed rgba(138, 154, 123, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.daxx-colors {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.yasuri-colors {
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(63, 81, 181, 0.1));
+  border-color: rgba(103, 58, 183, 0.3);
+}
+
+.placeholder-content {
+  color: var(--charcoal);
+  opacity: 0.7;
+}
+
+.character-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.trait-tag {
+  background: rgba(138, 154, 123, 0.2);
+  color: var(--sage);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Caveat', cursive;
+}
+
+/* Gallery Styles */
+.filter-tag {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(138, 154, 123, 0.3);
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-tag:hover,
+.filter-tag.active {
+  background: var(--sage);
+  color: white;
+  border-color: var(--sage);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.artwork-container {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(138, 154, 123, 0.2);
+}
+
+.artwork-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.artwork-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--charcoal);
+  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.artwork-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.artwork-container:hover .artwork-overlay {
+  opacity: 1;
+}
+
+.artwork-container:hover .artwork-image {
+  transform: scale(1.05);
+}
+
+.overlay-content {
+  align-self: flex-end;
+  color: white;
+}
+
+.overlay-actions {
+  align-self: flex-start;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.action-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tag-mini {
+  background: rgba(138, 154, 123, 0.8);
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: var(--cream);
+  border-radius: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+}
+
+.modal-image-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 70vh;
+}
+
+.modal-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--charcoal);
+  opacity: 0.7;
+}
+
+.modal-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Biography Styles */
+.artist-photo-placeholder {
+  aspect-ratio: 1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed rgba(138, 154, 123, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sage), var(--muted-blue));
+  border-radius: 1px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--sage);
+  border: 3px solid var(--cream);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(138, 154, 123, 0.3);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--sage);
+}
+
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(138, 154, 123, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(138, 154, 123, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+  }
+  
+  .modal-info {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sketch-card {
+    padding: 1.5rem;
+  }
+  
+  .value-card {
+    padding: 1.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-marker {
+    left: -1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .sketch-card {
+    padding: 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .modal-content {
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+  
+  .modal-info {
+    padding: 1rem;
+  }
+}
+
+/* Smooth Animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sketch-card,
+.value-card,
+.gallery-item,
+.philosophy-card {
+  will-change: transform;
+}
+
+/* Focus States for Accessibility */
+button:focus,
+.nav-button:focus {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .paper-texture,
+  .floating-doodles {
+    display: none;
+  }
+  
+  .sketch-card {
+    border: 1px solid var(--sage);
+    box-shadow: none;
+  }
+}

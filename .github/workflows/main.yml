@@ -2,7 +2,7 @@ name: Deploy Vite React to GitHub Pages
 
 on:
   push:
-    branches: [zen] # ← your actual working branch
+    branches: [main] # ← your actual working branch
 
 jobs:
   deploy:

@@ -10,7 +10,7 @@ const About: React.FC = () => {
             ABOUT ZYLOX
           </h2>
           <p className="text-xl text-cyan-300">
-            The story behind the neon revolution
+            The story behind the neon revolutiion
           </p>
         </div>
 
